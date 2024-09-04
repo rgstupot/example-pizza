@@ -1,6 +1,6 @@
 function Intro() {
   return (
-    <div className="flex flex-col justify-center items-center mx-2 gap-2 bg-green-700 text-slate-50 p-1 rounded-md">
+    <div className="flex flex-col justify-center items-center mx-2 gap-2 bg-green-700 text-slate-50 py-2 px-5 rounded-md">
       <h1 className="text-xl font-semibold">Welcome to Example Pizza!</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum soluta,

@@ -1,0 +1,56 @@
+[
+  {
+    "pizzaName": "All Meat",
+    "description": "Enjoy all the meats on this super meat specialty pizza.",
+    "toppings": "pepperoni, ham, italian sausage, bacon",
+    "smallPrice": "$11.99",
+    "mediumPrice": "$12.99",
+    "largePrice": "$13.99",
+    "image": "all_meat.webp"
+  },
+  {
+    "pizzaName": "Deluxe",
+    "description": "The classic combination of meats and veggies.",
+    "toppings": "pepperoni, italian sausage, mushrooms, green peppers, onions, extra cheese",
+    "smallPrice": "$13.99",
+    "mediumPrice": "$14.99",
+    "largePrice": "$15.99",
+    "image": "deluxe.webp"
+  },
+  {
+    "pizzaName": "Garden",
+    "description": "All the veggies, none of the meat. Vegetarian friendly!",
+    "toppings": "mushrooms, black olives, onions, sliced tomatoes",
+    "smallPrice": "$9.99",
+    "mediumPrice": "$10.99",
+    "largePrice": "$11.99",
+    "image": "garden.webp"
+  },
+  {
+    "pizzaName": "Hawaiian Chicken",
+    "description": "Island inspired and fresh.",
+    "toppings": "ham, grilled chicken, bacon, pineapple",
+    "smallPrice": "$10.99",
+    "mediumPrice": "$11.99",
+    "largePrice": "$12.99",
+    "image": "hawaiian_chicken.webp"
+  },
+  {
+    "pizzaName": "Pepperoni Magnifico",
+    "description": "Two styles of pepperoni, intense Italian seasoning.",
+    "toppings": "pepperoni, old world pepperoni, italian seasoning",
+    "smallPrice": "$14.99",
+    "mediumPrice": "$15.99",
+    "largePrice": "$16.99",
+    "image": "pepperoni_magnifico.webp"
+  },
+  {
+    "pizzaName": "White Cheezy",
+    "description": "Not a fan of red sauce? Try this!",
+    "toppings": "bacon, onions, sliced tomatoes, garlic parmesan sauce, feta cheese",
+    "smallPrice": "$12.99",
+    "mediumPrice": "$13.99",
+    "largePrice": "$14.99",
+    "image": "white_cheezy.webp"
+  }
+]
