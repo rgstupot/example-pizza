@@ -28,6 +28,11 @@ function Cart() {
           </div>
         </div>
       </div>
+      <div className="flex justify-center md:justify-end m-2 p-2 sm:m-3 sm:p-3 md:m-4 md:p-4">
+        <button className="p-2 rounded-md bg-red-700 uppercase text-slate-50 hover:bg-red-500 font-extrabold">
+          proceed to checkout
+        </button>
+      </div>
     </div>
   );
 }
