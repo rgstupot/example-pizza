@@ -3,7 +3,24 @@ import { createContext, useContext, useState } from "react";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([
+    {
+      id: 1,
+      pizzaName: "Build Your Own",
+      toppings: ["pepperoni", "banana peppers", "mushrooms", "olives", "bacon"],
+      size: "Large",
+      price: 12.79,
+      quantity: 2,
+    },
+    {
+      id: 2,
+      pizzaName: "Build Your Own",
+      toppings: ["pepperoni", "banana peppers", "mushrooms", "olives", "bacon"],
+      size: "Large",
+      price: 12.79,
+      quantity: 1,
+    },
+  ]);
 
   const addToCart = (item) => {
     setCartItems((prevItems) => [...prevItems, item]);
@@ -17,9 +34,13 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
   };
 
+  const addQuantity = (itemId) => {
+    console.log(itemId);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+      value={{ cartItems, addToCart, removeFromCart, clearCart, addQuantity }}
     >
       {children}
     </CartContext.Provider>

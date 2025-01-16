@@ -8,6 +8,8 @@ import Menu from "./pages/Menu";
 import Coupons from "./pages/Coupons";
 import Rewards from "./pages/Rewards";
 import { CartProvider } from "./context/CartContext";
+import Order from "./pages/Order";
+import Cart from "./features/cart/Cart";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
             <Route path="menu" element={<Menu />} />
             <Route path="coupons" element={<Coupons />} />
             <Route path="rewards" element={<Rewards />} />
+            <Route path="order" element={<Order />} />
+            <Route path="cart" element={<Cart />} />
           </Route>
         </Routes>
       </BrowserRouter>
