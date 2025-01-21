@@ -10,6 +10,7 @@ import Rewards from "./pages/Rewards";
 import { CartProvider } from "./context/CartContext";
 import Order from "./pages/Order";
 import Cart from "./features/cart/Cart";
+import BuildOrder from "./features/order/BuildOrder";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="coupons" element={<Coupons />} />
             <Route path="rewards" element={<Rewards />} />
             <Route path="order" element={<Order />} />
+            <Route path="order/build" element={<BuildOrder />} />
             <Route path="cart" element={<Cart />} />
           </Route>
         </Routes>

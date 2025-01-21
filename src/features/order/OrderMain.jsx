@@ -1,5 +1,11 @@
+import OrderBuildYourOwn from "./OrderBuildYourOwn";
+
 function OrderMain() {
-  return <div>Order</div>;
+  return (
+    <div className="flex flex-col p-2">
+      <OrderBuildYourOwn />
+    </div>
+  );
 }
 
 export default OrderMain;
