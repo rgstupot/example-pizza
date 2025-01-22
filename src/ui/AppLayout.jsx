@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 function AppLayout() {
   return (
-    <div className="bg-slate-50 grid grid-rows-[max-content_1fr] h-screen font-roboto">
+    <div className="bg-slate-50 grid grid-rows-[max-content_1fr] min-h-screen font-roboto">
       <header>
         <Header />
       </header>

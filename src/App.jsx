@@ -17,7 +17,7 @@ function App() {
     <CartProvider>
       <BrowserRouter>
         <Routes>
-          <Route element={<AppLayout />}>
+          <Route path="/" element={<AppLayout />}>
             <Route index element={<Main />} />
             <Route path="menu" element={<Menu />} />
             <Route path="coupons" element={<Coupons />} />

@@ -6,8 +6,8 @@ function BuildYourOwn() {
         <div className="flex flex-col gap-1">
           <h2 className="text-sm">Toppings</h2>
           <h3 className="italic text-xs">
-            pepperoni, sausage, ham, bacon, mushrooms, onions, sausage, bacon,
-            black olives, green peppers, pineapple, spinach
+            pepperoni, sausage, ham, bacon, mushrooms, onions, black olives,
+            green peppers, pineapple, spinach
           </h3>
           <h2 className="text-xs">$0.40 each</h2>
         </div>
