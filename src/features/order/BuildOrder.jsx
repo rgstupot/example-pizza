@@ -1,8 +1,19 @@
+import { useState } from "react";
 import SizeSelector from "../../ui/SizeSelector";
 import ToppingSelector from "../../ui/ToppingSelector";
 import { BsArrowUpSquare, BsArrowDownSquare } from "react-icons/bs";
 
 function BuildOrder() {
+  const [quantity, setQuantity] = useState(1);
+
+  function increaseQuantity() {
+    setQuantity(quantity + 1);
+  }
+
+  function decreaseQuantity() {
+    setQuantity(quantity - 1);
+  }
+
   const toppings = [
     "pepperoni",
     "sausage",
@@ -34,14 +45,18 @@ function BuildOrder() {
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
             <h2 className="text-lg font-semibold">Quantity</h2>
             <span className="text-xl">x</span>
-            <span className="text-xl">1</span>
+            <span className="text-xl">{quantity}</span>
             <div className="flex flex-col gap-1 sm:gap-2">
-              <button className="p-1.5 rounded-md hover:bg-red-500">
+              <button
+                className="p-1.5 rounded-md hover:bg-red-500"
+                onClick={increaseQuantity}
+              >
                 <BsArrowUpSquare className="h-[1.5rem] sm:h-[1.6rem] md:h-[1.7rem] w-auto" />
               </button>
               <button
-                disabled
+                disabled={quantity == 1}
                 className="disabled:text-slate-400 p-1.5 rounded-md enabled:hover:bg-red-500"
+                onClick={decreaseQuantity}
               >
                 <BsArrowDownSquare className="h-[1.5rem] sm:h-[1.6rem] md:h-[1.7rem] w-auto" />
               </button>
