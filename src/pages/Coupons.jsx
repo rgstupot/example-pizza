@@ -1,6 +1,6 @@
 function Coupons() {
   return (
-    <div className="flex flex-col gap-5 px-4 py-2">
+    <div className="flex flex-col gap-5 px-4 py-2 xl:mx-[15rem] lg:mx-[10rem] md:mx-[5rem]">
       <div className="flex justify-center items-center my-5">
         <h1 className="text-3xl font-extrabold text-red-700">Current Deals</h1>
       </div>
@@ -16,11 +16,11 @@ function Coupons() {
               order now
             </button>
           </div>
-          <div className="lg:flex items-center hidden">
+          <div className="xl:flex items-center hidden">
             <img
               src="pepperoni_magnifico.webp"
               alt="Pepperoni Feast"
-              className="h-[20rem] w-auto rounded-md"
+              className="h-[15rem] w-auto rounded-md"
             />
           </div>
         </div>
@@ -33,7 +33,7 @@ function Coupons() {
               order now
             </button>
           </div>
-          <div className="lg:flex items-center hidden">
+          <div className="xl:flex items-center hidden">
             <img
               src="build_your_own.webp"
               alt="Variety Deluxe"
@@ -52,7 +52,7 @@ function Coupons() {
               order now
             </button>
           </div>
-          <div className="lg:flex items-center hidden">
+          <div className="xl:flex items-center hidden">
             <img
               src="deluxe.webp"
               alt="Specialty Pick Three"

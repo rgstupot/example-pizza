@@ -2,7 +2,7 @@ import OrderMain from "../features/order/OrderMain";
 
 function Order() {
   return (
-    <div>
+    <div className="lg:mx-[10rem] md:mx-[5rem]">
       <OrderMain />
     </div>
   );

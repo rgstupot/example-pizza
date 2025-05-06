@@ -2,7 +2,7 @@ import { CiPizza } from "react-icons/ci";
 
 function Rewards() {
   return (
-    <div className="flex flex-col gap-5 px-4 py-2">
+    <div className="flex flex-col gap-5 px-4 py-2 xl:mx-[25rem] lg:mx-[15rem] md:mx-[10rem]">
       <div className="flex justify-center">
         <h1 className="text-3xl italic font-extrabold uppercase">
           pizza reward points
