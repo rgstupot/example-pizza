@@ -1,16 +1,5 @@
 import { createContext, useContext, useState } from "react";
 
-const testCart = [
-  {
-    id: 1,
-    pizzaName: "Build Your Own",
-    size: "large",
-    toppings: ["pepperoni", "mushrooms"],
-    quantity: 2,
-    price: 11.99,
-  },
-];
-
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
