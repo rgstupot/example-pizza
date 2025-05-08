@@ -5,16 +5,16 @@ const testCart = [
     id: 1,
     pizzaName: "Build Your Own",
     size: "large",
-    toppings: ["pepperoni","mushrooms"],
+    toppings: ["pepperoni", "mushrooms"],
     quantity: 2,
-    price: 11.99
-  }
-]
+    price: 11.99,
+  },
+];
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState(testCart);
+  const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
     setCartItems((prevItems) => [...prevItems, item]);
@@ -25,8 +25,12 @@ export const CartProvider = ({ children }) => {
   };
 
   const editCartItem = (itemId, updates) => {
-    setCartItems(currentCart => currentCart.map(item => item.id === itemId ? {...item, ...updates } : item))
-  }
+    setCartItems((currentCart) =>
+      currentCart.map((item) =>
+        item.id === itemId ? { ...item, ...updates } : item
+      )
+    );
+  };
 
   const clearCart = () => {
     setCartItems([]);

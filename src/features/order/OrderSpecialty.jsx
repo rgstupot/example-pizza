@@ -10,20 +10,22 @@ function OrderSpecialty({ pizza }) {
         </div>
         <div className="flex flex-col gap-1">
           <h2 className="text-sm">Toppings</h2>
-          <h3 className="italic text-xs">{pizza.toppings}</h3>
+          <h3 className="italic text-xs">
+            {pizza.toppings.map((topping) => topping).join(", ")}
+          </h3>
         </div>
         <div className="flex justify-between gap-5 text-xs">
           <div className="flex flex-col gap-1">
             <h2 className="text-sm">Small</h2>
-            <h1>{pizza.smallPrice}</h1>
+            <h1>{`$${pizza.smallPrice}`}</h1>
           </div>
           <div className="flex flex-col gap-1">
             <h2 className="text-sm">Medium</h2>
-            <h1>{pizza.mediumPrice}</h1>
+            <h1>{`$${pizza.mediumPrice}`}</h1>
           </div>
           <div className="flex flex-col gap-1">
             <h2 className="text-sm">Large</h2>
-            <h1>{pizza.largePrice}</h1>
+            <h1>{`$${pizza.largePrice}`}</h1>
           </div>
         </div>
         <div className="flex items-center">
