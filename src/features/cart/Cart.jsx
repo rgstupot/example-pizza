@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
 
 function Cart() {
-  const { cartItems, clearCart, editCartItem } = useCart();
+  const { cartItems, clearCart} = useCart();
 
   function calculateSubtotal(cart) {
     let subTotal = 0;
@@ -24,7 +24,7 @@ function Cart() {
       {cartItems.length ? (
         <div className="flex flex-col">
           {cartItems.map((pizza) => (
-            <CartItem pizza={pizza} editCartItem={editCartItem} key={pizza.id}  />
+            <CartItem pizza={pizza} key={pizza.id}  />
           ))}
           <div className="flex justify-end m-2 p-2 sm:m-3 sm:p-3 md:m-4 md:p-4 md:text-xl">
             <div className="flex flex-col gap-2">
