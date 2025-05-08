@@ -11,6 +11,7 @@ import { CartProvider } from "./context/CartContext";
 import Order from "./pages/Order";
 import Cart from "./features/cart/Cart";
 import BuildOrder from "./features/order/BuildOrder";
+import SpecialityOrder from "./features/order/SpecialityOrder";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="rewards" element={<Rewards />} />
             <Route path="order" element={<Order />} />
             <Route path="order/build" element={<BuildOrder />} />
+            <Route path="order/:pizzaName" element={<SpecialityOrder />} />
             <Route path="cart" element={<Cart />} />
           </Route>
         </Routes>
