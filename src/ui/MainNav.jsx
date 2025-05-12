@@ -16,10 +16,10 @@ function MainNav() {
         menu
       </Link>
       <Link
-        to="coupons"
+        to="deals"
         className="flex justify-center items-center uppercase py-2 hover:bg-slate-100 hover:font-semibold outline-none"
       >
-        coupons
+        deals
       </Link>
       <Link
         to="rewards"

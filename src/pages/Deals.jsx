@@ -1,4 +1,29 @@
-function Coupons() {
+import { useCart } from "../context/CartContext";
+import { v4 as uuidv4 } from "uuid";
+import menuPizzas from "../data/menuPizzas.json";
+import { useNavigate } from "react-router-dom";
+
+function Deals() {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  function PepperoniFeast() {
+    const pepperoniMagnifico = menuPizzas.find(
+      (pizza) => pizza.pizzaName === "Pepperoni Magnifico"
+    );
+
+    addToCart({
+      id: uuidv4(),
+      pizzaName: "Pepperoni Feast - Deal",
+      size: "large",
+      toppings: pepperoniMagnifico.toppings,
+      quantity: 3,
+      price: 10,
+    });
+
+    navigate("/cart");
+  }
+
   return (
     <div className="flex flex-col gap-5 px-4 py-2 xl:mx-[15rem] lg:mx-[10rem] md:mx-[5rem]">
       <div className="flex justify-center items-center my-5">
@@ -12,7 +37,10 @@ function Coupons() {
               Three large Pepperoni Magnifico pizzas.
             </p>
             <h2 className="text-lg font-semibold mb-3">$30</h2>
-            <button className="uppercase bg-red-700 p-1 text-slate-50 hover:bg-red-600 hover:font-semibold outline-none w-[10rem]">
+            <button
+              onClick={() => PepperoniFeast()}
+              className="uppercase bg-red-700 p-1 text-slate-50 hover:bg-red-600 hover:font-semibold outline-none w-[10rem]"
+            >
               order now
             </button>
           </div>
@@ -29,7 +57,10 @@ function Coupons() {
             <h1 className="text-xl font-extrabold">Variety Deluxe</h1>
             <p className="text-sm mt-12 mb-6">Large 5-topping pizza.</p>
             <h2 className="text-lg font-semibold mb-3">$12</h2>
-            <button className="uppercase bg-red-700 p-1 text-slate-50 hover:bg-red-600 hover:font-semibold outline-none w-[10rem]">
+            <button
+              onClick={() => navigate("/deals/varietydeluxe")}
+              className="uppercase bg-red-700 p-1 text-slate-50 hover:bg-red-600 hover:font-semibold outline-none w-[10rem]"
+            >
               order now
             </button>
           </div>
@@ -48,7 +79,10 @@ function Coupons() {
               Any three medium specialty pizzas.
             </p>
             <h2 className="text-lg font-semibold mb-3">$25</h2>
-            <button className="uppercase bg-red-700 p-1 text-slate-50 hover:bg-red-600 hover:font-semibold outline-none w-[10rem]">
+            <button
+              onClick={() => navigate("/deals/specialtypickthree")}
+              className="uppercase bg-red-700 p-1 text-slate-50 hover:bg-red-600 hover:font-semibold outline-none w-[10rem]"
+            >
               order now
             </button>
           </div>
@@ -65,4 +99,4 @@ function Coupons() {
   );
 }
 
-export default Coupons;
+export default Deals;

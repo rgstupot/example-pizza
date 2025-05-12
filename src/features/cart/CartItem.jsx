@@ -27,13 +27,23 @@ function CartItem({ pizza }) {
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
           <div className="flex flex-col gap-1 sm:gap-2">
             <button
+              disabled={
+                pizza.pizzaName === "Pepperoni Feast - Deal" ||
+                pizza.pizzaName === "Variety Deluxe - Deal" ||
+                pizza.pizzaName === "Specialty Pick Three - Deal"
+              }
               onClick={() => changeQuantity(pizza.id, pizza.quantity + 1)}
-              className="p-1.5 rounded-md hover:bg-slate-200"
+              className="disabled:text-gray-400 p-1.5 rounded-md enabled:hover:bg-slate-200"
             >
               <BsArrowUpSquare className="h-[1.5rem] sm:h-[1.6rem] md:h-[1.7rem] w-auto" />
             </button>
             <button
-              disabled={pizza.quantity == 1}
+              disabled={
+                pizza.quantity === 1 ||
+                pizza.pizzaName === "Pepperoni Feast - Deal" ||
+                pizza.pizzaName === "Variety Deluxe - Deal" ||
+                pizza.pizzaName === "Specialty Pick Three - Deal"
+              }
               onClick={() => changeQuantity(pizza.id, pizza.quantity - 1)}
               className="disabled:text-gray-400 p-1.5 rounded-md enabled:hover:bg-slate-200"
             >
