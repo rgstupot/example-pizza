@@ -1,7 +1,20 @@
 import MainNav from "./MainNav";
 import ShoppingCart from "./ShoppingCart";
+import { useCart } from "../context/CartContext";
 
 function Header() {
+  const { cartItems } = useCart();
+
+  function calculateSubtotal(cart) {
+    let subTotal = 0;
+    for (const item of cart) {
+      subTotal += item.price * item.quantity;
+    }
+    return subTotal;
+  }
+
+  const subTotal = calculateSubtotal(cartItems);
+
   return (
     <>
       <header className="grid grid-cols-3 h-[10rem] lg:h-[15rem]">
@@ -14,7 +27,14 @@ function Header() {
           />
         </div>
         <div className="bg-red-700 flex justify-end py-5 px-2">
-          <ShoppingCart />
+          <div className="flex flex-col items-center">
+            <ShoppingCart />
+            {cartItems.length > 0 && (
+              <span className="text-slate-50 text-xs sm:text-sm md:text-base">{`$${subTotal.toFixed(
+                2
+              )}`}</span>
+            )}
+          </div>
         </div>
       </header>
       <nav>
