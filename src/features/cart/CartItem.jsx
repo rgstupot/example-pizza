@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
-import { BsArrowUpSquare, BsArrowDownSquare, BsTrash3 } from "react-icons/bs";
+import {
+  BsArrowUpSquare,
+  BsArrowDownSquare,
+  BsTrash3,
+  BsPencil,
+} from "react-icons/bs";
 
 function CartItem({ pizza }) {
   const { editCartItem, removeFromCart } = useCart();
+  const navigate = useNavigate();
 
   const toppingList = pizza.toppings.map((topping) => topping).join(", ");
 
@@ -57,6 +64,13 @@ function CartItem({ pizza }) {
           {(pizza.price * pizza.quantity).toFixed(2)}
         </div>
         <div className="flex items-center">
+          <button
+            onClick={() => navigate(`/order/edit/${pizza.id}`)}
+            disabled={pizza.pizzaName === "Pepperoni Feast - Deal"}
+            className="p-1.5 rounded-md enabled:hover:bg-slate-200 disabled:text-gray-400"
+          >
+            <BsPencil className="h-[1.5rem] sm:h-[1.6rem] md:h-[1.7rem] w-auto"></BsPencil>
+          </button>
           <button
             onClick={() => removeFromCart(pizza.id)}
             className="p-1.5 rounded-md hover:bg-slate-200"

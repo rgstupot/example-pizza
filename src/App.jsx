@@ -14,6 +14,7 @@ import BuildOrder from "./features/order/BuildOrder";
 import SpecialityOrder from "./features/order/SpecialityOrder";
 import VarietyDeluxeOrder from "./features/order/VarietyDeluxeOrder";
 import SpecialtyPickThreeOrder from "./features/order/SpecialtyPickThreeOrder";
+import EditOrder from "./features/order/EditOrder";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="order" element={<Order />} />
             <Route path="order/build" element={<BuildOrder />} />
             <Route path="order/:pizzaName" element={<SpecialityOrder />} />
+            <Route path="order/edit/:id" element={<EditOrder />} />
             <Route path="cart" element={<Cart />} />
           </Route>
         </Routes>
