@@ -1,12 +1,19 @@
+// Third Party Libraries
 import { v4 as uuidv4 } from "uuid";
 import { useForm } from "react-hook-form";
-import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
+// Context
+import { useCart } from "../../context/CartContext";
+
 function BuildOrder() {
+  // Grabbing function from context
   const { addToCart } = useCart();
+
+  // Setting up navigate function
   const navigate = useNavigate();
 
+  // Extraction functions from react hook form, setting up initial form data state
   const {
     register,
     handleSubmit,
@@ -20,6 +27,7 @@ function BuildOrder() {
     },
   });
 
+  // Form submission handler
   function onSubmit(data, e) {
     e.preventDefault();
     switch (data.size) {
@@ -38,6 +46,7 @@ function BuildOrder() {
     navigate("/cart");
   }
 
+  // Static list of toppings
   const toppings = [
     "pepperoni",
     "sausage",
@@ -51,6 +60,7 @@ function BuildOrder() {
     "spinach",
   ];
 
+  // Static list of sizes
   const sizes = ["small", "medium", "large"];
 
   return (

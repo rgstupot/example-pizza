@@ -1,12 +1,21 @@
+// Third party libraries
 import { useNavigate } from "react-router-dom";
+
+// Context
 import { useCart } from "../../context/CartContext";
+
+// UI libraries
 import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
 
 function Cart() {
+  // Getting cart data/functions from cart context
   const { cartItems, clearCart } = useCart();
+
+  // Setting navigate function
   const navigate = useNavigate();
 
+  // Calculating subtotal, tax, and total
   function calculateSubtotal(cart) {
     let subTotal = 0;
     for (const item of cart) {
@@ -16,9 +25,7 @@ function Cart() {
   }
 
   const subTotal = calculateSubtotal(cartItems);
-
   const tax = subTotal * 0.07;
-
   const total = subTotal + tax;
 
   return (

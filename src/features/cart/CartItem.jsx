@@ -1,5 +1,5 @@
+// Third Party Libraries
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
 import {
   BsArrowUpSquare,
   BsArrowDownSquare,
@@ -7,12 +7,20 @@ import {
   BsPencil,
 } from "react-icons/bs";
 
+// Context
+import { useCart } from "../../context/CartContext";
+
 function CartItem({ pizza }) {
+  // Grabbing functions from cart context
   const { editCartItem, removeFromCart } = useCart();
+
+  // Setting navigate function
   const navigate = useNavigate();
 
+  // Creatting a toppings list string from an array
   const toppingList = pizza.toppings.map((topping) => topping).join(", ");
 
+  // Quantity increase/decrease function
   function changeQuantity(itemId, newQuantity) {
     editCartItem(itemId, { quantity: newQuantity });
   }

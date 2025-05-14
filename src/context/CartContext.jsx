@@ -1,12 +1,16 @@
+// Third party libraries
 import { createContext, useContext, useEffect, useState } from "react";
 
+// Initiating context
 const CartContext = createContext();
 
+// Getting cart from local storage or initializing as an ampty array
 const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(cartFromLocalStorage);
 
+  // Anytime cart updates it gets sent to local storage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
