@@ -1,3 +1,4 @@
+// Third-party libraries
 import { CiPizza } from "react-icons/ci";
 
 function Rewards() {

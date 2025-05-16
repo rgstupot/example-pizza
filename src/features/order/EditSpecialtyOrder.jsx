@@ -1,18 +1,31 @@
+// Third party libraries
 import { useForm } from "react-hook-form";
-import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
+
+// Context
+import { useCart } from "../../context/CartContext";
+
+// Local menu data
 import menuPizzas from "../../data/menuPizzas.json";
 
 function EditSpecialityOrder({ cartItemToEdit }) {
+  // Getting edit function from context
   const { editCartItem } = useCart();
+
+  // Setting up navigate function
   const navigate = useNavigate();
 
+  // Static size data
   const sizes = ["small", "medium", "large"];
 
+  // Getting the meny data for the specialty pizza based on name
   const selectedPizza = menuPizzas.find(
     (pizza) => pizza.pizzaName === cartItemToEdit.pizzaName
   );
 
+  /* Setting up react-hook form with required functions and default data, cart to edit passed as props. 
+     setting price to zero so calculations don't have to change
+  */
   const {
     register,
     handleSubmit,
@@ -24,6 +37,7 @@ function EditSpecialityOrder({ cartItemToEdit }) {
     },
   });
 
+  // Form submission handler
   function onSubmit(data, e) {
     e.preventDefault();
     switch (data.size) {

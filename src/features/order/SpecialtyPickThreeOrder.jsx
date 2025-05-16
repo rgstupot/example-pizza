@@ -1,12 +1,19 @@
+// Third-party libraries
 import { v4 as uuidv4 } from "uuid";
 import { useForm } from "react-hook-form";
-import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
+// Context
+import { useCart } from "../../context/CartContext";
+
 function SpecialtyPickThreeOrder() {
+  // Grabbing add function from context
   const { addToCart } = useCart();
+
+  // Setting up navigate function
   const navigate = useNavigate();
 
+  // Setting up react-hook-form with required functions and default data
   const {
     register,
     handleSubmit,
@@ -21,12 +28,14 @@ function SpecialtyPickThreeOrder() {
     },
   });
 
+  // Form submission handler
   function onSubmit(data, e) {
     e.preventDefault();
     addToCart(data);
     navigate("/cart");
   }
 
+  // Specialty pizza static data
   const specialtyPizzas = [
     "All Meat",
     "Deluxe",

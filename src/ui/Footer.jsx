@@ -1,3 +1,4 @@
+// Third-party libraries
 import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 function Footer() {

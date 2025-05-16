@@ -1,8 +1,12 @@
+// Third-party libraries
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+
+// Context
 import { useCart } from "../context/CartContext";
 
 function ShoppingCart() {
+  // Getting cart contents from context
   const { cartItems } = useCart();
 
   return (

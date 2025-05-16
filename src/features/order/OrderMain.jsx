@@ -1,6 +1,9 @@
+// UI libraries
 import OrderBuildYourOwn from "./OrderBuildYourOwn";
-import menuPizzas from "../../data/menuPizzas.json";
 import OrderSpecialty from "./OrderSpecialty";
+
+// Data
+import menuPizzas from "../../data/menuPizzas.json";
 
 function OrderMain() {
   return (

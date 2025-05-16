@@ -1,3 +1,4 @@
+// UI libraries
 import BuildYourOwn from "../features/menu/BuildYourOwn";
 import MenuItem from "../features/menu/MenuItem";
 import menuPizzas from "../data/menuPizzas.json";

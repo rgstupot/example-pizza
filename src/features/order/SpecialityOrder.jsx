@@ -1,20 +1,33 @@
+// Third-party libraries
 import { v4 as uuidv4 } from "uuid";
 import { useForm } from "react-hook-form";
-import { useCart } from "../../context/CartContext";
 import { useNavigate, useParams } from "react-router-dom";
+
+// Context
+import { useCart } from "../../context/CartContext";
+
+// Data
 import menuPizzas from "../../data/menuPizzas.json";
 
 function SpecialityOrder() {
+  // Getting pizza name from URL
   const { pizzaName } = useParams();
+
+  // Getting add function from context
   const { addToCart } = useCart();
+
+  // Setting up navigate function
   const navigate = useNavigate();
 
+  // Static size data
   const sizes = ["small", "medium", "large"];
 
+  // Grabbing menu data based on pizza name
   const selectedPizza = menuPizzas.find(
     (pizza) => pizza.pizzaName === pizzaName
   );
 
+  // Setting up react-hook-form with required functions and default data
   const {
     register,
     handleSubmit,
@@ -29,6 +42,7 @@ function SpecialityOrder() {
     },
   });
 
+  // Form submission handler
   function onSubmit(data, e) {
     e.preventDefault();
     switch (data.size) {

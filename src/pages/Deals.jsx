@@ -1,13 +1,23 @@
-import { useCart } from "../context/CartContext";
+// Third-party libraries
 import { v4 as uuidv4 } from "uuid";
-import menuPizzas from "../data/menuPizzas.json";
 import { useNavigate } from "react-router-dom";
 
+// Context
+import { useCart } from "../context/CartContext";
+
+// Data
+import menuPizzas from "../data/menuPizzas.json";
+
 function Deals() {
+  // Getting add function from context
   const { addToCart } = useCart();
+
+  // Setting up navigation function
   const navigate = useNavigate();
 
+  // Pepperoni feast deal is direct because you cannot choose quantity, toppings, or different pizzas
   function PepperoniFeast() {
+    // Grabbing the pepperoni magnifico pizza from the menu data
     const pepperoniMagnifico = menuPizzas.find(
       (pizza) => pizza.pizzaName === "Pepperoni Magnifico"
     );

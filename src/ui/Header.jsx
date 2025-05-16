@@ -1,10 +1,15 @@
+// UI libraries
 import MainNav from "./MainNav";
 import ShoppingCart from "./ShoppingCart";
+
+// Context
 import { useCart } from "../context/CartContext";
 
 function Header() {
+  // Getting cart contents
   const { cartItems } = useCart();
 
+  // Calculating subtotal for use below the cart icon
   function calculateSubtotal(cart) {
     let subTotal = 0;
     for (const item of cart) {

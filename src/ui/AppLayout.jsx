@@ -1,6 +1,8 @@
+// Third-party libraries
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
 
+// UI libraries
+import Header from "./Header";
 import Footer from "./Footer";
 
 function AppLayout() {
