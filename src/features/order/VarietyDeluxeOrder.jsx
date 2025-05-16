@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 // Context
 import { useCart } from "../../context/CartContext";
 
+// Data
+import toppings from "../../data/toppings";
+
 function VarietyDeluxeOrder() {
   // Getting add function from context
   const { addToCart } = useCart();
@@ -34,20 +37,6 @@ function VarietyDeluxeOrder() {
     addToCart(data);
     navigate("/cart");
   }
-
-  // Static toppings data
-  const toppings = [
-    "pepperoni",
-    "sausage",
-    "ham",
-    "bacon",
-    "mushrooms",
-    "onions",
-    "black olives",
-    "green peppers",
-    "pinapple",
-    "spinach",
-  ];
 
   return (
     <div className="flex flex-col p-2">

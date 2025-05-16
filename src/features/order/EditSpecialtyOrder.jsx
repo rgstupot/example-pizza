@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 // Context
 import { useCart } from "../../context/CartContext";
 
-// Local menu data
+// Data
 import menuPizzas from "../../data/menuPizzas.json";
+import sizes from "../../data/sizes";
 
 function EditSpecialityOrder({ cartItemToEdit }) {
   // Getting edit function from context
@@ -14,9 +15,6 @@ function EditSpecialityOrder({ cartItemToEdit }) {
 
   // Setting up navigate function
   const navigate = useNavigate();
-
-  // Static size data
-  const sizes = ["small", "medium", "large"];
 
   // Getting the meny data for the specialty pizza based on name
   const selectedPizza = menuPizzas.find(

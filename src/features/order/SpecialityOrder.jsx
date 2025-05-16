@@ -8,6 +8,7 @@ import { useCart } from "../../context/CartContext";
 
 // Data
 import menuPizzas from "../../data/menuPizzas.json";
+import sizes from "../../data/sizes";
 
 function SpecialityOrder() {
   // Getting pizza name from URL
@@ -18,9 +19,6 @@ function SpecialityOrder() {
 
   // Setting up navigate function
   const navigate = useNavigate();
-
-  // Static size data
-  const sizes = ["small", "medium", "large"];
 
   // Grabbing menu data based on pizza name
   const selectedPizza = menuPizzas.find(

@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 // Context
 import { useCart } from "../../context/CartContext";
 
+// Data
+import toppings from "../../data/toppings";
+import sizes from "../../data/sizes";
+
 function EditBuildOrder({ cartItemToEdit }) {
   // Getting functions from context
   const { editCartItem } = useCart();
@@ -42,23 +46,6 @@ function EditBuildOrder({ cartItemToEdit }) {
     editCartItem(data.id, data);
     navigate("/cart");
   }
-
-  // Static list of toppings
-  const toppings = [
-    "pepperoni",
-    "sausage",
-    "ham",
-    "bacon",
-    "mushrooms",
-    "onions",
-    "black olives",
-    "green peppers",
-    "pinapple",
-    "spinach",
-  ];
-
-  // Static list of sizes
-  const sizes = ["small", "medium", "large"];
 
   return (
     <div className="flex flex-col p-2">

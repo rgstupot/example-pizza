@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 // Context
 import { useCart } from "../../context/CartContext";
 
+// Data
+import specialtyPizzas from "../../data/specialtyPizzas";
+
 function SpecialtyPickThreeOrder() {
   // Grabbing add function from context
   const { addToCart } = useCart();
@@ -34,16 +37,6 @@ function SpecialtyPickThreeOrder() {
     addToCart(data);
     navigate("/cart");
   }
-
-  // Specialty pizza static data
-  const specialtyPizzas = [
-    "All Meat",
-    "Deluxe",
-    "Garden",
-    "Hawaiian Chicken",
-    "Pepperoni Magnifico",
-    "White Cheezy",
-  ];
 
   return (
     <div className="flex flex-col p-2">
