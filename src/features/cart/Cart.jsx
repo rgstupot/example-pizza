@@ -28,6 +28,11 @@ function Cart() {
   const tax = subTotal * 0.07;
   const total = subTotal + tax;
 
+  function proceed() {
+    clearCart();
+    navigate("/cart/thankyou");
+  }
+
   return (
     <>
       {cartItems.length ? (
@@ -60,7 +65,7 @@ function Cart() {
               continue ordering
             </button>
             <button
-              onClick={() => clearCart()}
+              onClick={() => proceed()}
               className="md:w-[75%] lg:w-[50%] xl:w-[25%] p-2 rounded-md bg-red-700 uppercase text-slate-50 hover:bg-red-500 font-extrabold"
             >
               proceed to checkout
